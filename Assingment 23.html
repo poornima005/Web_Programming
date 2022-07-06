@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Stopwatch</title>
+    <style>
+
+        div#st {
+            background-color: darkgreen;
+            width: 415px;
+            height: 50px;
+            border: blanchedalmond 2px solid;
+            padding: 9px;
+        }
+
+        div#sw {
+            background-color: darkgrey;
+            border: 2px darkgrey solid;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px black;
+            margin-right: auto;
+            margin-left: auto;
+            width: 275px;
+            height: 25px;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body bgcolor="black">
+    <h1 style="color: blanchedalmond;">Stopwatch</h1>
+    <button onclick="time = setInterval(start,10)">Start the stopwatch</button>
+    <button onclick="stop_time()">Pause the stopwatch</button>
+    <button onclick="reset()">Reset the stopwatch</button>
+    <div id="st">
+        <div id="sw">
+            <b>
+                <p id="sh" style="color: black; text-align:center;"></p>
+            </b>
+        </div>
+        <script>
+            var hrs = 00;
+            var min = 00;
+            var sec = 00;
+            var ms = 00;
+            var time;
+            function start() {
+                ms = ms + 1;
+                if (ms == 100) {
+                    sec = sec + 1;
+                    ms = 00;
+                }
+                else if (sec == 60) {
+                    min = min + 1;
+                    sec = 00;
+                    ms = 00;
+                }
+                else if (min == 60) {
+                    hrs = hrs + 1;
+                    min = 00;
+                    sec = 00;
+                    ms = 00;
+                }
+                document.getElementById("sh").innerHTML = hrs + " : " + min + " : " + sec + " : " + ms;
+            }
+            function stop_time() {
+                clearInterval(time);
+            }
+            function reset() {
+                clearInterval(time);
+                sec = 00;
+                min = 00;
+                hrs = 00;
+                ms = 00;
+                document.getElementById("sh").innerHTML = hrs + " : " + min + " : " + sec + " : " + ms;
+            }
+        </script>
+    </div>
+</body>
+
+</html>
