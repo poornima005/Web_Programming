@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DOM Window</title>
+    <style>
+        button:hover{
+            color:red;
+            background-color: yellow;
+            border: 2px #dc143c solid;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px blanchedalmond;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body bgcolor="cyan">
+    <button onclick="open_w()">Open Window</button>
+    <button onclick="alert_w()">Alert Window</button>
+    <button onclick="prompt_w()">Prompt Window</button>
+    <script>
+        function open_w() {
+            window.open("https://google.com/");
+        }
+        function alert_w() {
+            alert("Go Away");
+        }
+        function prompt_w() {
+            var text;
+            var country = window.prompt("What is the name of your country ?");
+            switch (country) {
+                case "India":
+                    text = "Great !!!";
+                    break;
+                case "india":
+                    text = "Great !!!";
+                    break;
+                case "INDIA":
+                    text = "Great !!!";
+                    break;
+                default:
+                    text = "Not So Great !!!";
+                    break;
+            }
+            document.getElementById("a").innerHTML = text;
+        }
+    </script>
+    <p id="a" style="color: blanchedalmond;"></p>
+</body>
+
+</html>
