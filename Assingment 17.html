@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Show Information</title>
+    <style>
+        div#f {
+            background-color: darkgrey;
+            width: 400px;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body bgcolor="black">
+    <h1 style="color: blanchedalmond">FORM</h1>
+    <div id="f">
+        <form action="http://localhost/PROGRAMS/FIRST.PHP" method="post" target="open">
+            <label for="Na" style="color: black;">Name : </label>
+            <input name="Name" style="background-color: grey;" id="Na" type="text"><br><br>
+            <label for="Pa" style="color: black;">Password : </label>
+            <input name="Password" style="background-color: grey;" id="Pa" type="password"><br><br>
+            <input type="submit" value="Show Information">
+            <input type="reset" value="Clear">
+        </form>
+        <br>
+        <iframe src="" title="form" name="open"
+            style="border: 2px rgb(199, 189, 189) solid;width: 300px;height: 100px;background-color: red;"></iframe>
+    </div>
+    
+</body>
+
+</html>
+
